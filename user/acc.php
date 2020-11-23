@@ -20,42 +20,56 @@ if(!$email){
 	<title></title>
   <style>
     html,body{
-  background-image:url(hd.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;s
+      overflow-x: hidden;
+      background-color: #2B427A;
+      
+     
+    
+     
+  
 }
   </style>
-</head>
+   
+  </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <h2>Welcome To User: <?php echo $email ?></h2>
- <ul class="nav justify-content-center" style="margin-left:40%;">
-    &nbsp;&nbsp;
-  <li class="nav-item">
-  <div class="dropdown">
-  <button class="dropbtn" style="background-color:#0974DA;border-radius: 12px;">user</button>
-  <div class="dropdown-content">
-    <a href="doc.php">Doctor</a>
-    <a href="app.php">View Appointment</a>
-    <a href="logout.php">Logout</a>
-  </div>
-</div>
-  </li>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  
-  <li class="nav-item">
-  <div class="dropdown">
-  <a href="chat.php"><img src="chat.png"></a>
-  </div>
-  </li>
-</ul> 
-  </div>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    <a class="navbar-brand" href="../index.php" style="margin: 0;">
+      <img src="../logo.png">
+    </a>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="" style="width: 100%;">
+      <ul class="nav" style="display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap;">
+        <li class="nav-item">
+          <a class="nav-link" href="../doctor/doctor.php">
+            <font color="black">Doctors</font><br>Book an Appointment
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pharmacy/pharmacy.php">
+            <font color="black">Pharmacy</font><br>Medicines & health Product
+          </a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button class="dropbtn" style=" background-color:#0974DA;border-radius: 12px;padding:10px 20px;"><a href="logout.php" style="color:white">Logout</a></button>
+            
+          </div>
+        <li class="nav-item" style="">
+          <a href="../chat.php">
+            <img src="chat.png" style="max-width: 40px;">
+            <br>Consult With Doctor</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<br>
 
 <br>
 <div class="card" style="background-image: url(../bg.jpg);background-size: cover;">
-  <div style="margin-left: 8%;"><h1><font color = "#204AB2">Lorem ipsum<br>dolorist cons</font></h1></div><br><br><br><br><br><br><br><br>
+  <div style="margin-left: 8%;"><h1><p style="text-align: center; margin-top:70px;">Find and book the <span style="color: Brown; "> best doctors </span> near you</p></h1><br><br>
   <div class="container" style="margin-left: 20%;">
         <form action="search.php" method="get" novalidate="novalidate">
             <div class="row">
@@ -66,7 +80,7 @@ if(!$email){
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0" style="width:200%">
                             <select class="form-control search-slt" id="exampleFormControlSelect1" style="width:200%;" name="dis">
-                              <option>Disease Search</option>
+                              <option >Search Disease </option> 
                                 <?php 
 include"../db.php";
 $cate_fetch = "SELECT * FROM doctor_profile";
@@ -98,21 +112,22 @@ echo "<option value=\"$sp\">$sp</option>";
             </div>
 
         </form>
-      </div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d27208.51508685792!2d74.3325803883194!3d31.522391521720646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospital!5e0!3m2!1sen!2s!4v1606115798193!5m2!1sen!2s" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div> <br> <br>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d27208.51508685792!2d74.3325803883194!3d31.522391521720646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospital!5e0!3m2!1sen!2s!4v1606115798193!5m2!1sen!2s" width="1000" height="450" frameborder="0" style="border:0; align:center; display:flex; margin-left:12%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div><br><br><br>
 
-  <div class="row justify-content-start" style="margin-left: 24%;">
-    <div class="col-4" style="border-style: dotted; border-color: blue;">
-      <img src="../phar.jpg"><div style="margin-left: 45%; margin-top: -38%"><font color="blue"><h5>Online Pharmacy</h5></font><br><p>Purchase medicine<br><br></p><a href="../pharmacy/pharmacy.php"><input type="submit" name="pharmacy" class="btn btn-primary" value="Pharmacy"  style="width:100%;"></a></div>
+  <div class="row justify-content-start" style="margin-left: 24%; ">
+    <div class="col-4" style="border-style: none; border-color: blue;  ">
+      <img src="../phar.jpg"><div style="margin-left: 45%; margin-top: -38% "><font color="blue"><h5 >Online Pharmacy</h5></font><br><p>Purchase medicine<br><br></p><a href="../pharmacy/pharmacy.php"><input type="submit" name="pharmacy" class="btn btn-primary" value="Pharmacy"  style="width:100%; "></a></div>
     </div>
-    <div class="col-4" style="border-style: dotted;">
+    <div class="col-4" style="border-style: none; ">
       <img src="../doc.jpg"><div style="margin-left: 45%; margin-top: -40%"><font color="blue"><h5>Online Doctors</h5></font><br><p>Booking Doctors<br><br></p><a href="doc.php"><input type="submit" name="pharmacy" class="btn btn-primary" value="Start Consulting"  style="width:100%;"></a></div>
     </div>
 </div>
 <br><br><br>
 <center>
-<p><font color="blue"><h3>Find doctors by health concern</h3></font></center><br><br>
+<p><font color="blue"><h3>Find Doctors By Health Concern</h3></font>
+</center><br><br>
 
 <?php
 include '../db.php';
@@ -130,18 +145,18 @@ $id     = $rows['id'];
 $dis     = $rows['disease'];
 $pic     = $rows['pic'];
 ?>
-<div style="margin-left: 7%; float: left;">
+<div style="margin-left: 7%; float: left; ">
 <img src="<?php echo "../admin/$pic" ?>" style ="margin-left: 14%;"><br><a href="doctor/sp_doc.php?doc=<?php echo $dis; ?>"><p style=""><?php echo ucfirst($dis) ?></p></a></div>
 
  
 <?php } }
 
  ?>
-<br><br><br><br>
+<br><br><br>
 
 
-<div class="wthree_footer_copy" style="background-color: #2B427A;">
-<p> © 2020 Online Doctors</a></p>
+<div class="wthree_footer_copy" style="background-color: #2B427A; padding:20px;">
+<p style="text-align:center; color:#fff; padding-top:10px;"> © 2020 Online Doctors</a></p>
 </div>
 
 
